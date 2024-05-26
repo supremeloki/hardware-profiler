@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hw-profiler"
+version = "0.1.0"
+description = "Hardware detection, tier classification, and local-AI capability matrix."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Kooroush Masoumi", email = "kooroushmasoumi@gmail.com" }]
+keywords = ["hardware", "profiler", "tier", "capability", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+live = ["psutil>=5.9", "pynvml>=11.5"]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
